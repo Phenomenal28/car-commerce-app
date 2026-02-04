@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Marquee } from '@/components/home/Marquee';
+//import { Marquee } from '@/components/home/Marquee';
 
 export function HeroSection() {
   const scrollToCollection = () => {
@@ -41,7 +41,7 @@ export function HeroSection() {
         </div>
       </div>
       
-      <Marquee />
+      
     </section>
   );
 }

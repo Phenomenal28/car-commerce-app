@@ -7,6 +7,7 @@ import { ShoppingBag, Heart, Menu, X, User } from 'lucide-react';
 
 const NAV_LINKS = [
   { label: 'Home', path: '/' },
+  { label: 'Shop', path: '/shop' },
   { label: 'Wishlist', path: '/wishlist' },
   { label: 'Cart', path: '/cart' },
   { label: 'Admin', path: '/admin' },
