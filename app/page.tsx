@@ -8,18 +8,37 @@ import AboutUs from '../src/components/home/AboutUs';
 import Testimonials from '@/components/home/Testimonials';
 import FAQ from '@/components/home/FAQ';
 import FinalCTA from '@/components/home/CTA';
+import Reveal from "@/components/animations/Reveal";
+import { GridLayout } from "@/components/layout/GridLayout";
+import Footer from '@/components/layout/Footer';
+
 
 export default function Home() {
   return (
     <main>
+      <GridLayout showGrid={false}>
       <Navbar />
       <HeroSection />
       <Marquee />
-      <Features />
-      <AboutUs />
-      <Testimonials />
-      <FAQ />
-      <FinalCTA />
+      <Reveal>
+        <Features />
+      </Reveal>
+      <Reveal>
+        <AboutUs />
+      </Reveal>
+      <Reveal>
+        <Testimonials />
+      </Reveal>
+      <Reveal>
+        <FAQ />
+      </Reveal>
+      <Reveal>
+        <FinalCTA />
+      </Reveal>
+      <Reveal>
+        <Footer />
+      </Reveal>
+    </GridLayout>
 
     </main>
   );

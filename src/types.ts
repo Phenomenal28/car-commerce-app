@@ -12,7 +12,11 @@ export interface Car {
     horsepower: number;
     acceleration: string; // 0-60 mph
     topSpeed: string;
+    transmission?: 'Automatic' | 'Manual';
+    fuelType?: 'Petrol' | 'Electric' | 'Hybrid';
   };
+  featured?: boolean;
+  badge?: 'New Arrival' | 'Limited Edition' | null;
 }
 
 export interface CartItem extends Car {

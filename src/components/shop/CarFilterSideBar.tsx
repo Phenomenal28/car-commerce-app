@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { BRANDS, CATEGORIES } from '@/data/cars';
-import { Button } from '../ui/button';
 
 interface CarFilterSideBarProps {
   selectedBrands: string[];
@@ -34,7 +33,7 @@ export function CarFilterSideBar({
         <div className="filter-group">
           <label className="filter-group-title">Brand</label>
           <div className="filter-checkbox-group">
-            {BRANDS.filter(b => b !== 'All').map(brand => (
+            {BRANDS.filter((b: string) => b !== 'All').map((brand: string) => (
               <label key={brand} className="filter-checkbox-label">
                 <input
                   type="checkbox"
@@ -51,7 +50,7 @@ export function CarFilterSideBar({
         <div className="filter-group">
           <label className="filter-group-title">Body Type</label>
           <div className="filter-checkbox-group">
-            {CATEGORIES.filter(c => c !== 'All').map(category => (
+            {CATEGORIES.filter((c: string) => c !== 'All').map((category: string) => (
               <label key={category} className="filter-checkbox-label">
                 <input
                   type="checkbox"
@@ -86,24 +85,24 @@ export function CarFilterSideBar({
         <div className="filter-group">
           <label className="filter-group-title">Transmission</label>
           <div className="filter-transmission-buttons">
-            <Button
+            <button
               className={`transmission-btn${transmission === 'Automatic' ? ' active' : ''}`}
               onClick={() => onTransmissionChange('Automatic')}
             >
               Automatic
-            </Button>
-            <Button
+            </button>
+            <button
               className={`transmission-btn${transmission === 'Manual' ? ' active' : ''}`}
               onClick={() => onTransmissionChange('Manual')}
             >
               Manual
-            </Button>
+            </button>
           </div>
         </div>
 
-        <Button className="filter-apply-btn" onClick={() => {}}>
+        <button className="filter-apply-btn" onClick={() => {}}>
           Apply Filters
-        </Button>
+        </button>
       </div>
     </aside>
   );

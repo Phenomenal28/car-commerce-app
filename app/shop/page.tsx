@@ -1,12 +1,16 @@
-import React from 'react'
-import { FeaturedCars } from '../../src/components/home/FeaturedCars';
+import React from 'react';
+import { FeaturedCars } from '@/components/home/FeaturedCars';
+import { GridLayout } from '@/components/layout/GridLayout';
+import Footer from '@/components/layout/Footer';
 
 
-
-function page() {
+export default function ShopPage() {
   return (
-    <FeaturedCars />
-  )
+    <>
+      <GridLayout showGrid={false}>
+        <FeaturedCars />
+      </GridLayout>
+      <Footer />
+    </>
+  );
 }
-
-export default page

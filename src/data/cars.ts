@@ -98,3 +98,6 @@ export const MOCK_CARS: Car[] = [
     }
   }
 ];
+
+export const BRANDS = ['All', ...Array.from(new Set(MOCK_CARS.map(car => car.brand)))];
+export const CATEGORIES = ['All', ...Array.from(new Set(MOCK_CARS.map(car => car.category)))];
