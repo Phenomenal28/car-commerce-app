@@ -28,6 +28,12 @@ html, body {
   overflow-x: hidden;
 }
 
+/* Page content wrapper - ensures content displays below fixed navbar */
+.page-content {
+  padding-top: 5rem; /* Height of navbar (80px) */
+  min-height: 100vh;
+}
+
 /* ============================================
    UTILITIES
    ============================================ */
@@ -467,6 +473,9 @@ a[href="/wishlist"].icon-link:hover {
   overflow: hidden;
   transition: all 0.5s ease;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   
   /* Initial state for animation */
   opacity: 0;
@@ -546,6 +555,37 @@ a[href="/wishlist"].icon-link:hover {
   opacity: 0.4;
 }
 
+/* Car Badge Labels - NEW ARRIVAL, LIMITED EDITION, etc. */
+.car-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 20;
+  padding: 0.375rem 0.875rem;
+  border-radius: 0.25rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.badge-new {
+  background-color: rgba(255, 0, 127, 0.9);
+  color: white;
+}
+
+.badge-limited {
+  background-color: rgba(255, 140, 0, 0.9);
+  color: white;
+}
+
+.badge-featured {
+  background-color: rgba(147, 51, 234, 0.9);
+  color: white;
+}
+
 .car-card-actions {
   position: absolute;
   top: 1rem;
@@ -571,6 +611,9 @@ a[href="/wishlist"].icon-link:hover {
 
 .car-card-content {
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .car-header {
@@ -1793,13 +1836,15 @@ a[href="/wishlist"].icon-link:hover {
   padding: 2rem 1.5rem;
   max-width: 1400px;
   margin: 0 auto;
+  width: 100%;
 }
 
 @media (min-width: 1024px) {
   .shop-layout {
     flex-direction: row;
     align-items: flex-start;
-    padding: 2rem 2rem;
+    padding: 3rem 2rem;
+    gap: 2.5rem;
   }
 }
 
@@ -1974,6 +2019,32 @@ a[href="/wishlist"].icon-link:hover {
 /* Shop Content Area */
 .shop-content {
   flex-grow: 1;
+  width: 100%;
+  min-width: 0; /* Prevents flex item from overflowing */
+}
+
+/* Product Grid - Responsive 3-column layout matching LuxeMotors */
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Desktop: 3 columns */
+@media (min-width: 1280px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
 }
 
 .shop-toolbar {

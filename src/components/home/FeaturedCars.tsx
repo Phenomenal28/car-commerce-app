@@ -5,6 +5,7 @@ import { MOCK_CARS } from '@/data/cars';
 import { ProductCard } from '@/components/product/ProductCard';
 import { CarFilterSideBar } from '@/components/shop/CarFilterSideBar';
 import { Search, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Button } from '../ui/button';
 
 export function FeaturedCars() {
   const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
@@ -94,17 +95,17 @@ export function FeaturedCars() {
 
         {/* Pagination */}
         <div className="shop-pagination">
-          <button className="pagination-btn">
+          <Button className="pagination-btn">
             <ChevronLeft size={20} />
-          </button>
-          <button className="pagination-btn active">1</button>
-          <button className="pagination-btn page-number">2</button>
-          <button className="pagination-btn page-number">3</button>
+          </Button>
+          <Button className="pagination-btn active">1</Button>
+          <Button className="pagination-btn page-number">2</Button>
+          <Button className="pagination-btn page-number">3</Button>
           <span className="pagination-ellipsis">...</span>
-          <button className="pagination-btn page-number">12</button>
-          <button className="pagination-btn">
+          <Button className="pagination-btn page-number">12</Button>
+          <Button className="pagination-btn">
             <ChevronRight size={20} />
-          </button>
+          </Button>
         </div>
       </div>
     </div>

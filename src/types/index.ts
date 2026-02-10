@@ -7,11 +7,13 @@ export interface Car {
   image: string;
   category: 'Sedan' | 'SUV' | 'Coupe' | 'Convertible' | 'Luxury';
   description: string;
+  badge?: 'NEW ARRIVAL' | 'LIMITED EDITION' | 'FEATURED'; // Optional badge
   specs: {
     engine: string;
     horsepower: number;
     acceleration: string; // 0-60 mph
     topSpeed: string;
+    transmission?: string; // Optional transmission type
   };
 }
 

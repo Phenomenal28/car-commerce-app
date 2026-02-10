@@ -17,37 +17,42 @@ export function ProductCard({ car, className = '', style }: ProductCardProps) {
       {/* Image Container */}
       <div className="car-card-image-container">
         <div className="car-card-overlay" />
+        {/* Badge Label */}
+        {car.badge && (
+          <div className={`car-badge ${car.badge === 'NEW ARRIVAL' ? 'badge-new' : car.badge === 'LIMITED EDITION' ? 'badge-limited' : 'badge-featured'}`}>
+            {car.badge}
+          </div>
+        )}
         <div className="relative aspect-[4/3]">
-            {/* Using img for external URLs if Next.js Image is not configured for domains */}
-            <img 
-            src={car.image} 
+          {/* Using img for external URLs if Next.js Image is not configured for domains */}
+          <img
+            src={car.image}
             alt={`${car.brand} ${car.model}`}
             className="car-image"
-            />
+          />
         </div>
-        
         {/* Hover Actions */}
         <div className="car-card-actions">
-           <Button size="icon" variant="secondary" className="action-btn">
-             <Heart size={18} />
-           </Button>
-           <Button size="icon" variant="default" className="action-btn">
-             <ShoppingBag size={18} />
-           </Button>
+          <Button size="icon" variant="secondary" className="action-btn">
+            <Heart size={18} />
+          </Button>
+          <Button size="icon" variant="default" className="action-btn">
+            <ShoppingBag size={18} />
+          </Button>
         </div>
       </div>
 
       {/* Content */}
       <div className="car-card-content">
         <div className="car-header">
-           <p className="car-brand">{car.brand}</p>
-           <div className="price-tag">
-             ${car.price.toLocaleString()}
-           </div>
+          <p className="car-brand">{car.brand}</p>
+          <div className="price-tag">
+            ${car.price.toLocaleString()}
+          </div>
         </div>
-        
+
         <h3 className="car-model">{car.model}</h3>
-        
+
         <div className="car-specs">
           <div className="spec-item">
             <span className="spec-label">0-60</span>
